@@ -1,0 +1,5 @@
+github "realm/realm-cocoa"
+github "Alamofire/Alamofire" "4.0.1"
+github "SnapKit/SnapKit" ~> 3.0.2
+github "ReactiveX/RxSwift" ~> 3.0
+github "RxSwiftCommunity/RxDataSources" "1.0.1"

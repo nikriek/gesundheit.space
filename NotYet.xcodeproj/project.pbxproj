@@ -8,20 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		A6190A281DE8E2690023F24E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A271DE8E2690023F24E /* AppDelegate.swift */; };
-		A6190A2A1DE8E2690023F24E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A291DE8E2690023F24E /* ViewController.swift */; };
-		A6190A2D1DE8E2690023F24E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6190A2B1DE8E2690023F24E /* Main.storyboard */; };
 		A6190A2F1DE8E2690023F24E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6190A2E1DE8E2690023F24E /* Assets.xcassets */; };
 		A6190A321DE8E2690023F24E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6190A301DE8E2690023F24E /* LaunchScreen.storyboard */; };
+		A6190A3A1DE8E33C0023F24E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A391DE8E33C0023F24E /* AppCoordinator.swift */; };
+		A6190A3D1DE8E5700023F24E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A3C1DE8E5700023F24E /* Router.swift */; };
+		A6190A3F1DE8E57E0023F24E /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A3E1DE8E57E0023F24E /* WebService.swift */; };
+		A6190A431DE8E6FC0023F24E /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A421DE8E6FC0023F24E /* HealthService.swift */; };
+		A6190A451DE8E7980023F24E /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A441DE8E7980023F24E /* OverviewViewController.swift */; };
+		A6190A491DE8E7E50023F24E /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A481DE8E7E50023F24E /* OverviewViewModel.swift */; };
+		A6190A521DE8E89F0023F24E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6190A4B1DE8E89F0023F24E /* SnapKit.framework */; };
+		A6190A531DE8E89F0023F24E /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6190A4C1DE8E89F0023F24E /* RxDataSources.framework */; };
+		A6190A541DE8E89F0023F24E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6190A4D1DE8E89F0023F24E /* RxCocoa.framework */; };
+		A6190A551DE8E89F0023F24E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6190A4E1DE8E89F0023F24E /* RxSwift.framework */; };
+		A6190A561DE8E89F0023F24E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6190A4F1DE8E89F0023F24E /* Alamofire.framework */; };
+		A6190A571DE8E89F0023F24E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6190A501DE8E89F0023F24E /* Realm.framework */; };
+		A6190A581DE8E89F0023F24E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6190A511DE8E89F0023F24E /* RealmSwift.framework */; };
+		A6190A5A1DE8E9470023F24E /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A591DE8E9470023F24E /* Serializable.swift */; };
+		A6190A5C1DE8E9660023F24E /* SessionManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A5B1DE8E9660023F24E /* SessionManagerExtension.swift */; };
+		A6190A5E1DE8ECA30023F24E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A5D1DE8ECA30023F24E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A6190A241DE8E2690023F24E /* NotYet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotYet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6190A271DE8E2690023F24E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6190A291DE8E2690023F24E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A6190A2C1DE8E2690023F24E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6190A2E1DE8E2690023F24E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6190A311DE8E2690023F24E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6190A331DE8E2690023F24E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6190A391DE8E33C0023F24E /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A6190A3C1DE8E5700023F24E /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A6190A3E1DE8E57E0023F24E /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		A6190A421DE8E6FC0023F24E /* HealthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthService.swift; sourceTree = "<group>"; };
+		A6190A441DE8E7980023F24E /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		A6190A481DE8E7E50023F24E /* OverviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
+		A6190A4B1DE8E89F0023F24E /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		A6190A4C1DE8E89F0023F24E /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		A6190A4D1DE8E89F0023F24E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		A6190A4E1DE8E89F0023F24E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		A6190A4F1DE8E89F0023F24E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		A6190A501DE8E89F0023F24E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		A6190A511DE8E89F0023F24E /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		A6190A591DE8E9470023F24E /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
+		A6190A5B1DE8E9660023F24E /* SessionManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagerExtension.swift; sourceTree = "<group>"; };
+		A6190A5D1DE8ECA30023F24E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +57,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6190A521DE8E89F0023F24E /* SnapKit.framework in Frameworks */,
+				A6190A531DE8E89F0023F24E /* RxDataSources.framework in Frameworks */,
+				A6190A541DE8E89F0023F24E /* RxCocoa.framework in Frameworks */,
+				A6190A551DE8E89F0023F24E /* RxSwift.framework in Frameworks */,
+				A6190A561DE8E89F0023F24E /* Alamofire.framework in Frameworks */,
+				A6190A571DE8E89F0023F24E /* Realm.framework in Frameworks */,
+				A6190A581DE8E89F0023F24E /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +75,7 @@
 			children = (
 				A6190A261DE8E2690023F24E /* NotYet */,
 				A6190A251DE8E2690023F24E /* Products */,
+				A6190A4A1DE8E89C0023F24E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +90,67 @@
 		A6190A261DE8E2690023F24E /* NotYet */ = {
 			isa = PBXGroup;
 			children = (
+				A6190A471DE8E7AF0023F24E /* Overview */,
+				A6190A3B1DE8E5600023F24E /* Services */,
 				A6190A271DE8E2690023F24E /* AppDelegate.swift */,
-				A6190A291DE8E2690023F24E /* ViewController.swift */,
-				A6190A2B1DE8E2690023F24E /* Main.storyboard */,
 				A6190A2E1DE8E2690023F24E /* Assets.xcassets */,
 				A6190A301DE8E2690023F24E /* LaunchScreen.storyboard */,
 				A6190A331DE8E2690023F24E /* Info.plist */,
+				A6190A391DE8E33C0023F24E /* AppCoordinator.swift */,
+				A6190A5D1DE8ECA30023F24E /* Constants.swift */,
 			);
 			path = NotYet;
+			sourceTree = "<group>";
+		};
+		A6190A3B1DE8E5600023F24E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A6190A411DE8E6E50023F24E /* HealthService */,
+				A6190A401DE8E6D50023F24E /* WebService */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		A6190A401DE8E6D50023F24E /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				A6190A5B1DE8E9660023F24E /* SessionManagerExtension.swift */,
+				A6190A3C1DE8E5700023F24E /* Router.swift */,
+				A6190A3E1DE8E57E0023F24E /* WebService.swift */,
+				A6190A591DE8E9470023F24E /* Serializable.swift */,
+			);
+			name = WebService;
+			sourceTree = "<group>";
+		};
+		A6190A411DE8E6E50023F24E /* HealthService */ = {
+			isa = PBXGroup;
+			children = (
+				A6190A421DE8E6FC0023F24E /* HealthService.swift */,
+			);
+			name = HealthService;
+			sourceTree = "<group>";
+		};
+		A6190A471DE8E7AF0023F24E /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				A6190A441DE8E7980023F24E /* OverviewViewController.swift */,
+				A6190A481DE8E7E50023F24E /* OverviewViewModel.swift */,
+			);
+			name = Overview;
+			sourceTree = "<group>";
+		};
+		A6190A4A1DE8E89C0023F24E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6190A4B1DE8E89F0023F24E /* SnapKit.framework */,
+				A6190A4C1DE8E89F0023F24E /* RxDataSources.framework */,
+				A6190A4D1DE8E89F0023F24E /* RxCocoa.framework */,
+				A6190A4E1DE8E89F0023F24E /* RxSwift.framework */,
+				A6190A4F1DE8E89F0023F24E /* Alamofire.framework */,
+				A6190A501DE8E89F0023F24E /* Realm.framework */,
+				A6190A511DE8E89F0023F24E /* RealmSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +214,6 @@
 			files = (
 				A6190A321DE8E2690023F24E /* LaunchScreen.storyboard in Resources */,
 				A6190A2F1DE8E2690023F24E /* Assets.xcassets in Resources */,
-				A6190A2D1DE8E2690023F24E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +224,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6190A2A1DE8E2690023F24E /* ViewController.swift in Sources */,
+				A6190A451DE8E7980023F24E /* OverviewViewController.swift in Sources */,
+				A6190A431DE8E6FC0023F24E /* HealthService.swift in Sources */,
 				A6190A281DE8E2690023F24E /* AppDelegate.swift in Sources */,
+				A6190A3D1DE8E5700023F24E /* Router.swift in Sources */,
+				A6190A5A1DE8E9470023F24E /* Serializable.swift in Sources */,
+				A6190A5E1DE8ECA30023F24E /* Constants.swift in Sources */,
+				A6190A491DE8E7E50023F24E /* OverviewViewModel.swift in Sources */,
+				A6190A3F1DE8E57E0023F24E /* WebService.swift in Sources */,
+				A6190A3A1DE8E33C0023F24E /* AppCoordinator.swift in Sources */,
+				A6190A5C1DE8E9660023F24E /* SessionManagerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A6190A2B1DE8E2690023F24E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A6190A2C1DE8E2690023F24E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A6190A301DE8E2690023F24E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -258,6 +346,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = NotYet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.nikriek.NotYet;
@@ -270,6 +362,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = NotYet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.nikriek.NotYet;
