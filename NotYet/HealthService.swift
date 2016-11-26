@@ -10,6 +10,8 @@ import HealthKit
 import RxSwift
 
 class HealthService {
+    static let shared = HealthService(healthKitStore: HKHealthStore())
+    
     let healthKitStore: HKHealthStore
 
     let healthKitTypesToRead = Set(arrayLiteral:

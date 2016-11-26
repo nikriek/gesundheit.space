@@ -14,7 +14,7 @@
 		A6190A3D1DE8E5700023F24E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A3C1DE8E5700023F24E /* Router.swift */; };
 		A6190A3F1DE8E57E0023F24E /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A3E1DE8E57E0023F24E /* WebService.swift */; };
 		A6190A431DE8E6FC0023F24E /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A421DE8E6FC0023F24E /* HealthService.swift */; };
-		A6190A451DE8E7980023F24E /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A441DE8E7980023F24E /* OverviewViewController.swift */; };
+		A6190A451DE8E7980023F24E /* BaseOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A441DE8E7980023F24E /* BaseOverviewViewController.swift */; };
 		A6190A491DE8E7E50023F24E /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A481DE8E7E50023F24E /* OverviewViewModel.swift */; };
 		A6190A521DE8E89F0023F24E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6190A4B1DE8E89F0023F24E /* SnapKit.framework */; };
 		A6190A531DE8E89F0023F24E /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6190A4C1DE8E89F0023F24E /* RxDataSources.framework */; };
@@ -26,6 +26,21 @@
 		A6190A5A1DE8E9470023F24E /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A591DE8E9470023F24E /* Serializable.swift */; };
 		A6190A5C1DE8E9660023F24E /* SessionManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A5B1DE8E9660023F24E /* SessionManagerExtension.swift */; };
 		A6190A5E1DE8ECA30023F24E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190A5D1DE8ECA30023F24E /* Constants.swift */; };
+		A63A8F331DE9E9EA00B08D33 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A8F321DE9E9EA00B08D33 /* Recommendation.swift */; };
+		A63A8F361DE9F8E800B08D33 /* InsightDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A8F351DE9F8E800B08D33 /* InsightDetailsViewController.swift */; };
+		A63A8F381DE9F99300B08D33 /* InsightDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A8F371DE9F99300B08D33 /* InsightDetailsViewModel.swift */; };
+		A63A8F3A1DEA009D00B08D33 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A8F391DEA009D00B08D33 /* ChartCell.swift */; };
+		A63A8F3C1DEA01CC00B08D33 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A8F3B1DEA01CC00B08D33 /* InfoCell.swift */; };
+		A63A8F3E1DEA01EE00B08D33 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A8F3D1DEA01EE00B08D33 /* DetailCell.swift */; };
+		A675AE1E1DE974F10038B47B /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A675AE1D1DE974F10038B47B /* UIView+Gradient.swift */; };
+		A675AE211DE976A90038B47B /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A675AE201DE976A90038B47B /* UIColor+CustomColors.swift */; };
+		A675AE261DE983B50038B47B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A675AE251DE983B50038B47B /* LoadingView.swift */; };
+		A675AE281DE99B520038B47B /* HealthKitAuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A675AE271DE99B520038B47B /* HealthKitAuthorizationViewModel.swift */; };
+		A675AE2B1DE99DFA0038B47B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A675AE2A1DE99DFA0038B47B /* HealthKit.framework */; };
+		A675AE2D1DE99F790038B47B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A675AE2C1DE99F790038B47B /* LoadingViewController.swift */; };
+		A675AE2F1DE9BA090038B47B /* KantaConnectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A675AE2E1DE9BA090038B47B /* KantaConnectViewModel.swift */; };
+		A675AE321DE9C4850038B47B /* InsightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A675AE311DE9C4840038B47B /* InsightViewController.swift */; };
+		A675AE341DE9C4AF0038B47B /* InsightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A675AE331DE9C4AF0038B47B /* InsightViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +53,7 @@
 		A6190A3C1DE8E5700023F24E /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A6190A3E1DE8E57E0023F24E /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		A6190A421DE8E6FC0023F24E /* HealthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthService.swift; sourceTree = "<group>"; };
-		A6190A441DE8E7980023F24E /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		A6190A441DE8E7980023F24E /* BaseOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOverviewViewController.swift; sourceTree = "<group>"; };
 		A6190A481DE8E7E50023F24E /* OverviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
 		A6190A4B1DE8E89F0023F24E /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		A6190A4C1DE8E89F0023F24E /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
@@ -50,6 +65,22 @@
 		A6190A591DE8E9470023F24E /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		A6190A5B1DE8E9660023F24E /* SessionManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagerExtension.swift; sourceTree = "<group>"; };
 		A6190A5D1DE8ECA30023F24E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A63A8F321DE9E9EA00B08D33 /* Recommendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
+		A63A8F351DE9F8E800B08D33 /* InsightDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightDetailsViewController.swift; sourceTree = "<group>"; };
+		A63A8F371DE9F99300B08D33 /* InsightDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightDetailsViewModel.swift; sourceTree = "<group>"; };
+		A63A8F391DEA009D00B08D33 /* ChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		A63A8F3B1DEA01CC00B08D33 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		A63A8F3D1DEA01EE00B08D33 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		A675AE1D1DE974F10038B47B /* UIView+Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
+		A675AE201DE976A90038B47B /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
+		A675AE251DE983B50038B47B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A675AE271DE99B520038B47B /* HealthKitAuthorizationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitAuthorizationViewModel.swift; sourceTree = "<group>"; };
+		A675AE291DE99DFA0038B47B /* NotYet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotYet.entitlements; sourceTree = "<group>"; };
+		A675AE2A1DE99DFA0038B47B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		A675AE2C1DE99F790038B47B /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		A675AE2E1DE9BA090038B47B /* KantaConnectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KantaConnectViewModel.swift; sourceTree = "<group>"; };
+		A675AE311DE9C4840038B47B /* InsightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightViewController.swift; sourceTree = "<group>"; };
+		A675AE331DE9C4AF0038B47B /* InsightViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +93,7 @@
 				A6190A541DE8E89F0023F24E /* RxCocoa.framework in Frameworks */,
 				A6190A551DE8E89F0023F24E /* RxSwift.framework in Frameworks */,
 				A6190A561DE8E89F0023F24E /* Alamofire.framework in Frameworks */,
+				A675AE2B1DE99DFA0038B47B /* HealthKit.framework in Frameworks */,
 				A6190A571DE8E89F0023F24E /* Realm.framework in Frameworks */,
 				A6190A581DE8E89F0023F24E /* RealmSwift.framework in Frameworks */,
 			);
@@ -90,6 +122,8 @@
 		A6190A261DE8E2690023F24E /* NotYet */ = {
 			isa = PBXGroup;
 			children = (
+				A63A8F341DE9E9EE00B08D33 /* Model */,
+				A675AE301DE9C4770038B47B /* Insights */,
 				A6190A471DE8E7AF0023F24E /* Overview */,
 				A6190A3B1DE8E5600023F24E /* Services */,
 				A6190A271DE8E2690023F24E /* AppDelegate.swift */,
@@ -97,7 +131,11 @@
 				A6190A301DE8E2690023F24E /* LaunchScreen.storyboard */,
 				A6190A331DE8E2690023F24E /* Info.plist */,
 				A6190A391DE8E33C0023F24E /* AppCoordinator.swift */,
+				A675AE2C1DE99F790038B47B /* LoadingViewController.swift */,
 				A6190A5D1DE8ECA30023F24E /* Constants.swift */,
+				A675AE291DE99DFA0038B47B /* NotYet.entitlements */,
+				A675AE1F1DE974F60038B47B /* Extensions */,
+				A675AE251DE983B50038B47B /* LoadingView.swift */,
 			);
 			path = NotYet;
 			sourceTree = "<group>";
@@ -133,8 +171,10 @@
 		A6190A471DE8E7AF0023F24E /* Overview */ = {
 			isa = PBXGroup;
 			children = (
-				A6190A441DE8E7980023F24E /* OverviewViewController.swift */,
+				A6190A441DE8E7980023F24E /* BaseOverviewViewController.swift */,
 				A6190A481DE8E7E50023F24E /* OverviewViewModel.swift */,
+				A675AE271DE99B520038B47B /* HealthKitAuthorizationViewModel.swift */,
+				A675AE2E1DE9BA090038B47B /* KantaConnectViewModel.swift */,
 			);
 			name = Overview;
 			sourceTree = "<group>";
@@ -142,6 +182,7 @@
 		A6190A4A1DE8E89C0023F24E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A675AE2A1DE99DFA0038B47B /* HealthKit.framework */,
 				A6190A4B1DE8E89F0023F24E /* SnapKit.framework */,
 				A6190A4C1DE8E89F0023F24E /* RxDataSources.framework */,
 				A6190A4D1DE8E89F0023F24E /* RxCocoa.framework */,
@@ -151,6 +192,37 @@
 				A6190A511DE8E89F0023F24E /* RealmSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A63A8F341DE9E9EE00B08D33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A63A8F321DE9E9EA00B08D33 /* Recommendation.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A675AE1F1DE974F60038B47B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A675AE1D1DE974F10038B47B /* UIView+Gradient.swift */,
+				A675AE201DE976A90038B47B /* UIColor+CustomColors.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A675AE301DE9C4770038B47B /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				A675AE311DE9C4840038B47B /* InsightViewController.swift */,
+				A675AE331DE9C4AF0038B47B /* InsightViewModel.swift */,
+				A63A8F351DE9F8E800B08D33 /* InsightDetailsViewController.swift */,
+				A63A8F371DE9F99300B08D33 /* InsightDetailsViewModel.swift */,
+				A63A8F391DEA009D00B08D33 /* ChartCell.swift */,
+				A63A8F3B1DEA01CC00B08D33 /* InfoCell.swift */,
+				A63A8F3D1DEA01EE00B08D33 /* DetailCell.swift */,
+			);
+			name = Insights;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +235,7 @@
 				A6190A201DE8E2690023F24E /* Sources */,
 				A6190A211DE8E2690023F24E /* Frameworks */,
 				A6190A221DE8E2690023F24E /* Resources */,
+				A675AE221DE976E40038B47B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -185,7 +258,13 @@
 				TargetAttributes = {
 					A6190A231DE8E2690023F24E = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = WP53SSE8S6;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -219,21 +298,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A675AE221DE976E40038B47B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A6190A201DE8E2690023F24E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6190A451DE8E7980023F24E /* OverviewViewController.swift in Sources */,
+				A675AE1E1DE974F10038B47B /* UIView+Gradient.swift in Sources */,
+				A6190A451DE8E7980023F24E /* BaseOverviewViewController.swift in Sources */,
+				A675AE2D1DE99F790038B47B /* LoadingViewController.swift in Sources */,
 				A6190A431DE8E6FC0023F24E /* HealthService.swift in Sources */,
 				A6190A281DE8E2690023F24E /* AppDelegate.swift in Sources */,
+				A63A8F361DE9F8E800B08D33 /* InsightDetailsViewController.swift in Sources */,
 				A6190A3D1DE8E5700023F24E /* Router.swift in Sources */,
 				A6190A5A1DE8E9470023F24E /* Serializable.swift in Sources */,
+				A675AE341DE9C4AF0038B47B /* InsightViewModel.swift in Sources */,
 				A6190A5E1DE8ECA30023F24E /* Constants.swift in Sources */,
 				A6190A491DE8E7E50023F24E /* OverviewViewModel.swift in Sources */,
+				A63A8F331DE9E9EA00B08D33 /* Recommendation.swift in Sources */,
+				A675AE321DE9C4850038B47B /* InsightViewController.swift in Sources */,
+				A63A8F3A1DEA009D00B08D33 /* ChartCell.swift in Sources */,
+				A63A8F3E1DEA01EE00B08D33 /* DetailCell.swift in Sources */,
+				A63A8F381DE9F99300B08D33 /* InsightDetailsViewModel.swift in Sources */,
 				A6190A3F1DE8E57E0023F24E /* WebService.swift in Sources */,
 				A6190A3A1DE8E33C0023F24E /* AppCoordinator.swift in Sources */,
+				A675AE2F1DE9BA090038B47B /* KantaConnectViewModel.swift in Sources */,
+				A675AE281DE99B520038B47B /* HealthKitAuthorizationViewModel.swift in Sources */,
+				A675AE211DE976A90038B47B /* UIColor+CustomColors.swift in Sources */,
+				A675AE261DE983B50038B47B /* LoadingView.swift in Sources */,
 				A6190A5C1DE8E9660023F24E /* SessionManagerExtension.swift in Sources */,
+				A63A8F3C1DEA01CC00B08D33 /* InfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +462,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NotYet/NotYet.entitlements;
+				DEVELOPMENT_TEAM = WP53SSE8S6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -362,6 +480,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NotYet/NotYet.entitlements;
+				DEVELOPMENT_TEAM = WP53SSE8S6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -393,6 +513,7 @@
 				A6190A381DE8E2690023F24E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

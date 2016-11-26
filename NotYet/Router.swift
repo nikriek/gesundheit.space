@@ -10,21 +10,26 @@ import Alamofire
 
 
 enum Router: URLRequestConvertible {
-    static let baseURLString = "https://example.com"
+    static let baseURLString = "https://hidden-sands-36117.herokuapp.com"
 
-    case example
+    case recommendations
+    case action(recommendationId: Int)
     
     var method: HTTPMethod {
         switch self {
-        case .example:
+        case .recommendations:
             return .get
+        case .action:
+            return .post
         }
     }
     
     var path: String {
         switch self {
-        case .example:
-            return "/users"
+        case .recommendations:
+            return "/recommendations"
+        case .action(let recommendationId):
+            return "/recommendations/\(recommendationId)/action"
         }
     }
     
