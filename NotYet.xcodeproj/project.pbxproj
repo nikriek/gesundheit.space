@@ -32,6 +32,8 @@
 		A63A8F3A1DEA009D00B08D33 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A8F391DEA009D00B08D33 /* ChartCell.swift */; };
 		A63A8F3C1DEA01CC00B08D33 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A8F3B1DEA01CC00B08D33 /* InfoCell.swift */; };
 		A63A8F3E1DEA01EE00B08D33 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A8F3D1DEA01EE00B08D33 /* DetailCell.swift */; };
+		A63A8F401DEA0E7900B08D33 /* Evidence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A8F3F1DEA0E7900B08D33 /* Evidence.swift */; };
+		A63A8F441DEA486700B08D33 /* UIButton+ImageCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A8F431DEA486700B08D33 /* UIButton+ImageCenter.swift */; };
 		A675AE1E1DE974F10038B47B /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A675AE1D1DE974F10038B47B /* UIView+Gradient.swift */; };
 		A675AE211DE976A90038B47B /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A675AE201DE976A90038B47B /* UIColor+CustomColors.swift */; };
 		A675AE261DE983B50038B47B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A675AE251DE983B50038B47B /* LoadingView.swift */; };
@@ -71,6 +73,8 @@
 		A63A8F391DEA009D00B08D33 /* ChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
 		A63A8F3B1DEA01CC00B08D33 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		A63A8F3D1DEA01EE00B08D33 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		A63A8F3F1DEA0E7900B08D33 /* Evidence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evidence.swift; sourceTree = "<group>"; };
+		A63A8F431DEA486700B08D33 /* UIButton+ImageCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+ImageCenter.swift"; sourceTree = "<group>"; };
 		A675AE1D1DE974F10038B47B /* UIView+Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
 		A675AE201DE976A90038B47B /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		A675AE251DE983B50038B47B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				A63A8F321DE9E9EA00B08D33 /* Recommendation.swift */,
+				A63A8F3F1DEA0E7900B08D33 /* Evidence.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			children = (
 				A675AE1D1DE974F10038B47B /* UIView+Gradient.swift */,
 				A675AE201DE976A90038B47B /* UIColor+CustomColors.swift */,
+				A63A8F431DEA486700B08D33 /* UIButton+ImageCenter.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -328,6 +334,7 @@
 			files = (
 				A675AE1E1DE974F10038B47B /* UIView+Gradient.swift in Sources */,
 				A6190A451DE8E7980023F24E /* BaseOverviewViewController.swift in Sources */,
+				A63A8F441DEA486700B08D33 /* UIButton+ImageCenter.swift in Sources */,
 				A675AE2D1DE99F790038B47B /* LoadingViewController.swift in Sources */,
 				A6190A431DE8E6FC0023F24E /* HealthService.swift in Sources */,
 				A6190A281DE8E2690023F24E /* AppDelegate.swift in Sources */,
@@ -342,6 +349,7 @@
 				A63A8F3A1DEA009D00B08D33 /* ChartCell.swift in Sources */,
 				A63A8F3E1DEA01EE00B08D33 /* DetailCell.swift in Sources */,
 				A63A8F381DE9F99300B08D33 /* InsightDetailsViewModel.swift in Sources */,
+				A63A8F401DEA0E7900B08D33 /* Evidence.swift in Sources */,
 				A6190A3F1DE8E57E0023F24E /* WebService.swift in Sources */,
 				A6190A3A1DE8E33C0023F24E /* AppCoordinator.swift in Sources */,
 				A675AE2F1DE9BA090038B47B /* KantaConnectViewModel.swift in Sources */,
@@ -469,6 +477,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = NotYet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.nikriek.NotYet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,6 +496,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = NotYet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.nikriek.NotYet;
 				PRODUCT_NAME = "$(TARGET_NAME)";

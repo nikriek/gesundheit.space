@@ -30,7 +30,7 @@ class InsightViewController: UIViewController{
         
         view.applyGradient(topRightColor: UIColor.customLightGreen, bottomLeftColor: UIColor.customGreen)
         
-        navigationController?.navigationBar.topItem?.title = ""
+        navigationController?.navigationBar.topItem?.title = "Status"
         
         viewModel.title.asObservable()
             .bindTo(titleLabel.rx.text)
@@ -39,20 +39,55 @@ class InsightViewController: UIViewController{
         viewModel.insightText.asObservable()
             .bindTo(insightLabel.rx.attributedText)
             .addDisposableTo(disposeBag)
+        
+        seeMoreButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let `self` = self else { return }
+                self.coordinator?.presentInsightDetails(on: self)
+            }).addDisposableTo(disposeBag)
     }
     
     private lazy var containerStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.backgroundColor = UIColor.white
         
-        self.view.addSubview(stackView)
-        stackView.snp.makeConstraints { make in
+        let wrapper = UIView()
+        wrapper.backgroundColor = UIColor.white
+        self.view.addSubview(wrapper)
+        wrapper.snp.makeConstraints { make in
             make.top.equalTo(self.view.snp.top).offset(self.navigationController?.navigationBar.frame.size.height ?? CGFloat(0))
             make.bottom.equalTo(self.view.snp.bottom)
             make.leading.equalTo(self.view.snp.leading)
             make.trailing.equalTo(self.view.snp.trailing)
         }
+        wrapper.addSubview(stackView)
+        stackView.snp.makeConstraints({ (make) in
+            make.edges.equalTo(wrapper.snp.edges)
+        })
+
+        return stackView
+    }()
+    
+    private lazy var topStackView: UIStackView = {
+        let stackView = UIStackView()
+        
+        stackView.axis = .vertical
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 38
+        
+        self.containerStackView.insertArrangedSubview(stackView, at: 0)
+        
+        return stackView
+    }()
+
+    private lazy var bottomStackView: UIStackView = {
+        let stackView = UIStackView()
+        
+        stackView.axis = .vertical
+        
+        self.containerStackView.insertArrangedSubview(stackView, at: 1)
+        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        stackView.isLayoutMarginsRelativeArrangement = true
         
         return stackView
     }()
@@ -60,8 +95,10 @@ class InsightViewController: UIViewController{
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        
-        self.containerStackView.insertArrangedSubview(label, at: 0)
+        label.font = UIFont.systemFont(ofSize: 30)
+        label.textColor = UIColor.customGray
+
+        self.topStackView.insertArrangedSubview(label, at: 0)
         
         return label
     }()
@@ -69,14 +106,34 @@ class InsightViewController: UIViewController{
     private lazy var insightLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 120, weight: UIFontWeightThin)
+        label.textColor = UIColor.customGray
         
-        self.containerStackView.insertArrangedSubview(label, at: 1)
+        self.topStackView.insertArrangedSubview(label, at: 1)
         
         return label
     }()
     
     private lazy var seeMoreButton: UIButton = {
         let button = UIButton()
+    
+        button.setTitleColor(UIColor.customGray, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        
+        self.bottomStackView.insertArrangedSubview(button, at: 0)
+        button.snp.makeConstraints { make in
+            make.height.equalTo(96)
+        }
+        button.setTitle("See more", for: .normal)
+        button.setImage(#imageLiteral(resourceName: "Chevron-Down"), for: .normal)
+        
+        button.backgroundColor = UIColor.customBackgroundGray
         return button
     }()
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        seeMoreButton.centerVertically(imageTop: true)
+    }
+    
 }

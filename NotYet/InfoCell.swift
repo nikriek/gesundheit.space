@@ -14,6 +14,9 @@ class InfoCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = UIColor.clear
+        textLabel?.textAlignment = .center
+        textLabel?.textColor = UIColor.customLightGray
+        textLabel?.numberOfLines = 0
     }
     
     required init?(coder aDecoder: NSCoder) {

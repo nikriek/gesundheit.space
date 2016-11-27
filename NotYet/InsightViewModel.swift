@@ -10,6 +10,25 @@ import RxSwift
 import Foundation
 
 class InsightViewModel {
-    let title = Variable<String?>("Title")
-    let insightText = Variable<NSAttributedString?>(NSAttributedString(string:"Title"))
+    let dispoeBag = DisposeBag()
+    let title = Variable<String?>(nil)
+    let insightText = Variable<NSAttributedString?>(NSAttributedString(string: ""))
+    
+    init(recommendationId: Int) {
+        let evidence = WebService.shared.fetchEvidences(for: recommendationId)
+            .map { $0.first }
+            .shareReplay(2)
+        
+        evidence
+            .map { $0?.measurementName }
+            .bindTo(title)
+            .addDisposableTo(dispoeBag)
+        
+        evidence
+            .map { "\($0?.measurementValue ?? "") / \($0?.cohortMeasurementValue ?? "")" }
+            .map { NSAttributedString(string: $0 ?? "")}
+            .bindTo(insightText)
+            .addDisposableTo(dispoeBag)
+
+    }
 }

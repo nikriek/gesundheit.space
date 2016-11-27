@@ -14,6 +14,7 @@ enum Router: URLRequestConvertible {
 
     case recommendations
     case action(recommendationId: Int)
+    case evidences(recommendationId: Int)
     
     var method: HTTPMethod {
         switch self {
@@ -21,6 +22,8 @@ enum Router: URLRequestConvertible {
             return .get
         case .action:
             return .post
+        case .evidences:
+            return .get
         }
     }
     
@@ -30,6 +33,8 @@ enum Router: URLRequestConvertible {
             return "/recommendations"
         case .action(let recommendationId):
             return "/recommendations/\(recommendationId)/action"
+        case .evidences(let recommendationId):
+            return "/recommendations/\(recommendationId)/evidences"
         }
     }
     

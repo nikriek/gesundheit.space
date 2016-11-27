@@ -13,7 +13,7 @@ protocol Coordinator: class {
     func done(with viewController: BaseOverviewViewController<HealthKitAuthorizationViewModel>)
     func done(with viewController: BaseOverviewViewController<KantaConnectViewModel>)
     func done(with viewController: LoadingViewController)
-    func presentInsight(on viewController: UIViewController)
+    func presentInsight(on viewController: UIViewController, recommendationId: Int)
     func presentInsightDetails(on viewController: UIViewController)
     func done(on viewController: InsightDetailsViewController)
 }
@@ -23,7 +23,7 @@ extension Coordinator {
     func done(with viewController: BaseOverviewViewController<HealthKitAuthorizationViewModel>) {}
     func done(with viewController: BaseOverviewViewController<KantaConnectViewModel>) {}
     func done(with viewController: LoadingViewController) {}
-    func presentInsight(on viewController: UIViewController) {}
+    func presentInsight(on viewController: UIViewController, recommendationId: Int)  {}
     func presentInsightDetails(on viewController: UIViewController) {}
     func done(on viewController: InsightDetailsViewController) {}
 }
@@ -32,7 +32,7 @@ class AppCoordinator {
     func start(on window: UIWindow?) {
         guard let window = window else { return }
         
-        let rootViewController = createInsightDetailsViewController()
+        let rootViewController = createOverviewViewController()
         
         window.rootViewController = rootViewController
     }
@@ -73,15 +73,15 @@ extension AppCoordinator {
         return vc
     }
     
-    fileprivate func createInsightViewController() -> UIViewController {
-        let viewModel = InsightViewModel()
+    fileprivate func createInsightViewController(recommendationId: Int) -> UIViewController {
+        let viewModel = InsightViewModel(recommendationId: recommendationId)
         let vc = InsightViewController(viewModel: viewModel)
         vc.coordinator = self
         return vc
     }
     
-    fileprivate func createInsightDetailsViewController() -> UIViewController {
-        let viewModel = InsightDetailsViewModel()
+    fileprivate func createInsightDetailsViewController(recommendationId: Int) -> UIViewController {
+        let viewModel = InsightDetailsViewModel(recommendationId: recommendationId)
         let vc = InsightDetailsViewController(viewModel: viewModel)
         vc.coordinator = self
         return vc
@@ -113,15 +113,15 @@ extension AppCoordinator: Coordinator {
         viewController.present(overviewViewController, animated: false, completion: nil)
     }
     
-    func presentInsight(on viewController: UIViewController) {
+    func presentInsight(on viewController: UIViewController, recommendationId: Int) {
         guard (viewController as? BaseOverviewViewController<OverviewViewModel>) != nil else { return }
-        let insightViewController = createInsightViewController()
+        let insightViewController = createInsightViewController(recommendationId: recommendationId)
         viewController.navigationController?.pushViewController(insightViewController, animated: true)
     }
     
-    func presentInsightDetails(on viewController: UIViewController) {
+    func presentInsightDetails(on viewController: UIViewController, recommendationId: Int) {
         guard let viewController = viewController as? InsightViewController else { return }
-        let insightDetailsViewController = createInsightDetailsViewController()
+        let insightDetailsViewController = createInsightDetailsViewController(recommendationId: recommendationId)
         viewController.present(insightDetailsViewController, animated: true, completion: nil)
     }
 

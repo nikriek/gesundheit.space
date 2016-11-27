@@ -18,4 +18,14 @@ class WebService {
         let route = Router.recommendations
         return sessionManager.requestCollection(route)
     }
+    
+    func fetchEvidences(for recommendationId: Int) -> Observable<[Evidence]> {
+        let route = Router.evidences(recommendationId: recommendationId)
+        return sessionManager.requestCollection(route)
+    }
+    
+    func doAction(recommendationId: Int) -> Observable<Void> {
+        let route = Router.action(recommendationId: recommendationId)
+        return sessionManager.requestEmpty(route)
+    }
 }

@@ -13,7 +13,7 @@ import RxSwift
 enum InsightItem {
     case info(text: String)
     case detail(name: String, value: NSAttributedString)
-    case chart(image: UIImage)
+    case chart(url: URL)
 }
 
 struct InsightSection: SectionModelType {
@@ -39,10 +39,21 @@ class InsightDetailsViewModel {
     
     let disposeBag = DisposeBag()
     
-    init() {
+    init(recommendationId: Int) {
         
-        insightItems.value = [InsightItem.chart(image: UIImage()), InsightItem.info(text: "Lol"), InsightItem.detail(name: "KK", value: NSAttributedString(string: "sdfjsf"))]
-        
+        WebService.shared.fetchEvidences(for: recommendationId)
+            .map {
+                [InsightItem.info(text: "Recommended values are based on a group of people who share a lot of similarities with you e.g. age and weight.\n\nPowered by Kanta, Localtapiola and Isaac")] + $0.flatMap {
+                    if let url = $0.url {
+                        return InsightItem.chart(url: URL(string: url)!)
+                    } else {
+                        return InsightItem.detail(name: $0.measurementName, value: NSAttributedString(string: "\($0.measurementValue) / \($0.cohortMeasurementValue)"))
+                    }
+                }
+            }
+            .bindTo(insightItems)
+            .addDisposableTo(disposeBag)
+                
         insightItems.asObservable()
             .map { [InsightSection(items: $0)] }
             .bindTo(sections)

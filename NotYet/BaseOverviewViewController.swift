@@ -50,7 +50,7 @@ class BaseOverviewViewController<ViewModel: BaseOverviewViewModel>: UIViewContro
         label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 30)
         label.numberOfLines = 0
-
+        
         let wrapperView = UIView()
         self.topStackView.insertArrangedSubview(wrapperView, at: 1)
         wrapperView.addSubview(label)
@@ -82,7 +82,7 @@ class BaseOverviewViewController<ViewModel: BaseOverviewViewModel>: UIViewContro
         
         button.setTitleColor(UIColor.gray, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-
+        
         self.bottomStackView.insertArrangedSubview(button, at: 1)
         
         return button
@@ -102,7 +102,7 @@ class BaseOverviewViewController<ViewModel: BaseOverviewViewModel>: UIViewContro
     
     private lazy var topStackView: UIStackView = {
         let stackView = UIStackView()
-
+        
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.spacing = 38
@@ -126,7 +126,7 @@ class BaseOverviewViewController<ViewModel: BaseOverviewViewModel>: UIViewContro
         let stackView = UIStackView()
         
         stackView.axis = .vertical
-
+        
         self.containerStackView.insertArrangedSubview(stackView, at: 1)
         stackView.layoutMargins = UIEdgeInsets(top: 24, left: 0, bottom: 24, right: 0)
         stackView.isLayoutMarginsRelativeArrangement = true
@@ -149,7 +149,7 @@ class BaseOverviewViewController<ViewModel: BaseOverviewViewModel>: UIViewContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         viewModel.statusText.asDriver()
             .drive(statusLabel.rx.attributedText)
             .addDisposableTo(disposeBag)
@@ -191,13 +191,15 @@ class BaseOverviewViewController<ViewModel: BaseOverviewViewModel>: UIViewContro
             .bindTo(viewModel.infoTapped)
             .addDisposableTo(disposeBag)
         
-        (viewModel as? OverviewViewModel)?.presentInsight
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] _ in
-                guard let `self` = self else { return }
-                self.coordinator?.presentInsight(on: self)
-            })
-            .addDisposableTo(disposeBag)
+        if let vm = (viewModel as? OverviewViewModel) {
+            vm.presentInsight
+                .observeOn(MainScheduler.instance)
+                .subscribe(onNext: { [weak self] _ in
+                    guard let `self` = self, let recommendationId = vm.currentRecommendation.value?.id else { return }
+                    self.coordinator?.presentInsight(on: self, recommendationId: recommendationId)
+                })
+                .addDisposableTo(disposeBag)
+        }
         
     }
     
