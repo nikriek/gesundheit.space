@@ -14,7 +14,7 @@ protocol Coordinator: class {
     func done(with viewController: BaseOverviewViewController<KantaConnectViewModel>)
     func done(with viewController: LoadingViewController)
     func presentInsight(on viewController: UIViewController, recommendationId: Int)
-    func presentInsightDetails(on viewController: UIViewController)
+    func presentInsightDetails(on viewController: UIViewController, recommendationId: Int)
     func done(on viewController: InsightDetailsViewController)
 }
 
@@ -24,7 +24,7 @@ extension Coordinator {
     func done(with viewController: BaseOverviewViewController<KantaConnectViewModel>) {}
     func done(with viewController: LoadingViewController) {}
     func presentInsight(on viewController: UIViewController, recommendationId: Int)  {}
-    func presentInsightDetails(on viewController: UIViewController) {}
+    func presentInsightDetails(on viewController: UIViewController, recommendationId: Int) {}
     func done(on viewController: InsightDetailsViewController) {}
 }
 
@@ -32,7 +32,7 @@ class AppCoordinator {
     func start(on window: UIWindow?) {
         guard let window = window else { return }
         
-        let rootViewController = createOverviewViewController()
+        let rootViewController = createHealthKitAuthorizationViewController()
         
         window.rootViewController = rootViewController
     }
@@ -86,7 +86,6 @@ extension AppCoordinator {
         vc.coordinator = self
         return vc
     }
-
 }
 
 extension AppCoordinator: Coordinator {

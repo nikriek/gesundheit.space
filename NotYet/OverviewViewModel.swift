@@ -14,7 +14,7 @@ class OverviewViewModel: BaseOverviewViewModel {
     var tipText = Variable<String?>("Lowering your room temperature could improve your sleep.")
     var actionTapped = PublishSubject<Void>()
     var skipTapped = PublishSubject<Void>()
-    var actionTitle = Variable<String?>("Do something")
+    var actionTitle = Variable<String?>(nil)
     var skipTitle = Variable<String?>("Skip")
     var done = PublishSubject<Void>()
     var infoTapped = PublishSubject<Void>()
@@ -49,21 +49,12 @@ class OverviewViewModel: BaseOverviewViewModel {
             .addDisposableTo(disposeBag)
         
         currentRecommendation.asObservable()
-            .map { $0?.type }
-            .map { type -> String? in
-                guard let type = type else { return nil }
-                switch type {
-                case .action(let action):
-                    return action
-                case .url:
-                    return "Open url"
-                default:
-                    return nil
-                }
+            .map { rec -> String? in
+                return rec?.actionTitle ?? " "
             }
-            .bindTo(tipText)
+            .bindTo(actionTitle)
             .addDisposableTo(disposeBag)
-        
+    
         currentRecommendation.asObservable()
             .map { $0?.type }
             .map { type -> String? in
@@ -90,8 +81,8 @@ class OverviewViewModel: BaseOverviewViewModel {
             }
             .map { $0?.id }
             .flatMap { WebService.shared.doAction(recommendationId: $0 ?? 1) }
-            .subscribe({ (event) in
-                print(event)
+            .subscribe({ [weak self] (event) in
+                self?.currentRecommendation.value = self?.recommendations.next()
             })
             .addDisposableTo(disposeBag)
         
@@ -104,8 +95,10 @@ class OverviewViewModel: BaseOverviewViewModel {
                 default:
                     return nil
                 }
-            }.subscribe(onNext: { link in
+            }.filter { $0 != nil }
+            .subscribe(onNext: { [weak self] link in
                 guard let link = link, let url = URL(string: link) else { return }
+                self?.currentRecommendation.value = self?.recommendations.next()
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }).addDisposableTo(disposeBag)
     }

@@ -25,7 +25,7 @@ class ChartCell: UITableViewCell {
             make.height.equalTo(240)
             make.bottom.equalTo(self.contentView.snp.bottom)
         }
-        webView.isUserInteractionEnabled = false
+        //webView.isUserInteractionEnabled = false
         
         return webView
     }()

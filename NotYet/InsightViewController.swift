@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class InsightViewController: UIViewController{
+class InsightViewController: UIViewController {
     weak var coordinator: Coordinator?
     
     let viewModel: InsightViewModel
@@ -30,7 +30,7 @@ class InsightViewController: UIViewController{
         
         view.applyGradient(topRightColor: UIColor.customLightGreen, bottomLeftColor: UIColor.customGreen)
         
-        navigationController?.navigationBar.topItem?.title = "Status"
+        navigationController?.navigationBar.topItem?.title = ""
         
         viewModel.title.asObservable()
             .bindTo(titleLabel.rx.text)
@@ -43,7 +43,7 @@ class InsightViewController: UIViewController{
         seeMoreButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 guard let `self` = self else { return }
-                self.coordinator?.presentInsightDetails(on: self)
+                self.coordinator?.presentInsightDetails(on: self, recommendationId: self.viewModel.recommendationId)
             }).addDisposableTo(disposeBag)
     }
     
@@ -108,7 +108,8 @@ class InsightViewController: UIViewController{
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 120, weight: UIFontWeightThin)
         label.textColor = UIColor.customGray
-        
+        label.numberOfLines = 0
+
         self.topStackView.insertArrangedSubview(label, at: 1)
         
         return label

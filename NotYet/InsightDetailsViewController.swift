@@ -53,6 +53,7 @@ class InsightDetailsViewController: UIViewController {
         tableView.register(DetailCell.self, forCellReuseIdentifier: DetailCell.identifier)
         tableView.backgroundColor = UIColor.customBackgroundGray
         tableView.allowsSelection = false
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 24, 0)
         
         self.containerStackView.insertArrangedSubview(tableView, at: 1)
        

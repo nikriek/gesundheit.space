@@ -20,13 +20,14 @@ class DetailCell: UITableViewCell {
         let label = UILabel()
         label.textColor = UIColor.customGray
         label.font = UIFont.systemFont(ofSize: 24)
+        label.numberOfLines = 0
         
         self.contentView.addSubview(label)
         label.snp.makeConstraints { (make) in
             make.left.equalTo(self.contentView.snp.left).offset(24)
             make.right.equalTo(self.contentView.snp.centerX)
-            make.top.equalTo(self.contentView.snp.top)
-            make.bottom.equalTo(self.contentView.snp.bottom)
+            make.top.equalTo(self.contentView.snp.top).offset(8)
+            make.bottom.equalTo(self.contentView.snp.bottom).offset(-8)
         }
         
         return label
@@ -37,13 +38,14 @@ class DetailCell: UITableViewCell {
         label.textColor = UIColor.customLightGray
         label.textAlignment = .right
         label.font = UIFont.systemFont(ofSize: 24)
-
+        label.numberOfLines = 0
+        
         self.contentView.addSubview(label)
         label.snp.makeConstraints { (make) in
             make.left.equalTo(self.contentView.snp.centerX)
             make.right.equalTo(self.contentView.snp.right).offset(-24)
-            make.top.equalTo(self.contentView.snp.top)
-            make.bottom.equalTo(self.contentView.snp.bottom)
+            make.top.equalTo(self.contentView.snp.top).offset(8)
+            make.bottom.equalTo(self.contentView.snp.bottom).offset(-8)
         }
         
         return label

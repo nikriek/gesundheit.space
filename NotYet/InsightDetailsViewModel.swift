@@ -47,7 +47,11 @@ class InsightDetailsViewModel {
                     if let url = $0.url {
                         return InsightItem.chart(url: URL(string: url)!)
                     } else {
-                        return InsightItem.detail(name: $0.measurementName, value: NSAttributedString(string: "\($0.measurementValue) / \($0.cohortMeasurementValue)"))
+                        let hightlightText = NSMutableAttributedString(string: "\($0.measurementValue)", attributes: [
+                            NSForegroundColorAttributeName: UIColor.customGreen])
+                        let string = NSAttributedString(string:" / \($0.cohortMeasurementValue)")
+                        hightlightText.append(string)
+                        return InsightItem.detail(name: $0.measurementName, value: hightlightText)
                     }
                 }
             }

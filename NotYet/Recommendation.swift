@@ -12,7 +12,7 @@ final class Recommendation: ResponseObjectSerializable, ResponseCollectionSerial
     enum ActionType {
         case none
         case url(String)
-        case action(String)
+        case action(Int)
     }
     
     var id: Int
@@ -40,7 +40,7 @@ final class Recommendation: ResponseObjectSerializable, ResponseCollectionSerial
 
         if let link = representation["link"] as? String {
             self.type = .url(link)
-        } else if let action = representation["action"] as? String {
+        } else if let action = representation["action"] as? Int {
             self.type = .action(action)
         } else {
             self.type = .none

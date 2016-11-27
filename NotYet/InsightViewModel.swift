@@ -8,13 +8,17 @@
 
 import RxSwift
 import Foundation
+import UIKit
 
 class InsightViewModel {
-    let dispoeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     let title = Variable<String?>(nil)
     let insightText = Variable<NSAttributedString?>(NSAttributedString(string: ""))
+    let recommendationId: Int
     
     init(recommendationId: Int) {
+        self.recommendationId = recommendationId
+        
         let evidence = WebService.shared.fetchEvidences(for: recommendationId)
             .map { $0.first }
             .shareReplay(2)
@@ -22,13 +26,20 @@ class InsightViewModel {
         evidence
             .map { $0?.measurementName }
             .bindTo(title)
-            .addDisposableTo(dispoeBag)
+            .addDisposableTo(disposeBag)
         
         evidence
-            .map { "\($0?.measurementValue ?? "") / \($0?.cohortMeasurementValue ?? "")" }
-            .map { NSAttributedString(string: $0 ?? "")}
+            .map { ev in
+                guard let measurementValue = ev?.measurementValue, let cohortMeasurementValue =  ev?.cohortMeasurementValue else {
+                    return NSAttributedString(string: "No Data found")
+                }
+                let hightlightText = NSMutableAttributedString(string: "\(measurementValue)", attributes: [
+                    NSForegroundColorAttributeName: UIColor.customGreen])
+                let string = NSAttributedString(string:" / \(cohortMeasurementValue)")
+                hightlightText.append(string)
+                return hightlightText
+            }
             .bindTo(insightText)
-            .addDisposableTo(dispoeBag)
-
+            .addDisposableTo(disposeBag)
     }
 }

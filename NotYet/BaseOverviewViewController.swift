@@ -68,7 +68,7 @@ class BaseOverviewViewController<ViewModel: BaseOverviewViewModel>: UIViewContro
         
         button.setTitleColor(UIColor.customLightGreen, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
-        
+
         self.bottomStackView.insertArrangedSubview(button, at: 0)
         button.snp.makeConstraints { make in
             make.height.equalTo(48)
